@@ -61,7 +61,6 @@ public class AvlTree<V> {
        nodeForChangeValues=null;
 
         }
-        //dont work
         fixAfterDelition(t);
         return value;
     }
@@ -145,15 +144,8 @@ public class AvlTree<V> {
                   }
                   //Это один поворот
                   else {
-//                      if(balanceOf(current.right)!=0){
                           current.balance=0;
                           current.right.balance=0;
-
-//                      }
-//                      else {//we need it or not???
-//                          current.right.balance=1;
-//                          current.balance=-1;
-//                      }
                       rotateLeft(current);
                   }
                   break;
@@ -182,13 +174,8 @@ public class AvlTree<V> {
                       rotateRight(current);
                   }
                  else {
-//                      if (balanceOf(current) != 0) {
                           current.balance = 0;
                           current.left.balance = 0;
-//                      } else {
-//                          current.left.balance = -1;
-//                          current.balance = 1;
-//                      }
                       rotateRight(current);
                   }
                   break;
@@ -240,9 +227,6 @@ public class AvlTree<V> {
         return (p == null ? null: p.parent);
     }
 
-    private static <V> Integer balanceOf(Entry<V> p) {
-        return (p == null ? null: p.balance);
-    }
 
 
     ArrayList<V> listOfValues;
